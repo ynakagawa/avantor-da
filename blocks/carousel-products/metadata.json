@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-products",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-02-17T04:38:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avantorsciences.com/us/en/",
+    "originPage": "Avantor Sciences homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "product-carousel",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product recommendation carousels",
+      "featured product slideshows",
+      "image galleries with captions"
+    ],
+    "notSuitableFor": [
+      "hero banner carousels",
+      "text-only slideshows",
+      "full-width image galleries"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/us/en/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-17T04:38:00.000Z"
+  }
+}

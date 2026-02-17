@@ -1,0 +1,40 @@
+{
+  "templates": [
+    {
+      "name": "avantor-homepage",
+      "urls": [
+        "https://www.avantorsciences.com/us/en/"
+      ],
+      "description": "Avantor Sciences homepage with hero banner, product grids, feature sections, brand cards, CTA banners, highlights, featured content, and product recommendations carousel",
+      "blocks": [
+        {
+          "name": "hero-product",
+          "instances": [
+            "cx-page-slot.Section1 .avtr-card.Hero_Card",
+            "cx-page-slot.Section3 .avtr-card.Content_Cta"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            "cx-page-slot.Section3 app-cmscard-container .Auto_Fit",
+            "cx-page-slot.Section3 app-cmscard-container .Highlights",
+            "cx-page-slot.Section3 app-cmscard-container .Column"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "cx-page-slot.Section3 > app-card > .cms-card > app-simple-card-ui > .avtr-card.Feature_Card_Img_After"
+          ]
+        },
+        {
+          "name": "carousel-products",
+          "instances": [
+            "cx-page-slot.AmazonRecommended app-avtr-carousel"
+          ]
+        }
+      ]
+    }
+  ]
+}

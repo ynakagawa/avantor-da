@@ -89,8 +89,9 @@ const formatSearchParams = (url) => {
       if (!['format', 'height', 'optimize', 'width'].includes(key)) searchParams.delete(key);
     }
   } else if (getExtension(url.pathname) === 'json') {
+    const jsonKeys = ['limit', 'offset', 'sheet', 'start', 'end'];
     for (const [key] of searchParams.entries()) {
-      if (!['limit', 'offset', 'sheet'].includes(key)) searchParams.delete(key);
+      if (!jsonKeys.includes(key)) searchParams.delete(key);
     }
   } else {
     url.search = '';

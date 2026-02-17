@@ -6,11 +6,15 @@ const getRedirect = (resp, savedSearch) => {
   }
 };
 
-const formatSchedule = async (response) => {
+const formatSchedule = async (response, urlOverride) => {
   const schedule2Response = (json) => new Response(JSON.stringify(json), response);
 
   const json = await response.json();
   if (!json.data?.[0]?.fragment) return schedule2Response(json);
+
+  const now = urlOverride?.searchParams?.get('start')
+    ? new Date(urlOverride.searchParams.get('start')).getTime()
+    : Date.now();
 
   const data = [];
   for (const [idx, schedule] of json.data.entries()) {
@@ -20,7 +24,6 @@ const formatSchedule = async (response) => {
     if (!start && !end) {
       data.push(json.data[idx]);
     } else {
-      const now = Date.now();
       const startDate = new Date(start);
       const endDate = new Date(end);
       if (startDate < now && endDate > now) data.push(json.data[idx]);
@@ -49,10 +52,10 @@ export const fetchFromAem = async ({ request, cache, savedSearch }) => {
   return resp;
 };
 
-export async function fetchSchedule({ request, cache, savedSearch }) {
+export async function fetchSchedule({ url, request, cache, savedSearch }) {
   const resp = await fetchFromAem({ request, cache, savedSearch });
 
   if (resp.status === 301 || resp.status === 304) return resp;
 
-  return formatSchedule(resp);
+  return formatSchedule(resp, url);
 }

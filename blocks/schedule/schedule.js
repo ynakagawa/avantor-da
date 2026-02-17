@@ -78,6 +78,10 @@ async function loadEvent(a, event, defEvent) {
 }
 
 function getDate() {
+  // URL override: ?start= uses that date instead of now for schedule filtering
+  const startParam = new URL(window.location.href).searchParams.get('start');
+  if (startParam) return new Date(startParam).getTime();
+
   const now = Date.now();
   if (ENV === 'prod') return now;
 
@@ -88,7 +92,12 @@ function getDate() {
 }
 
 export default async function init(a) {
-  const resp = await fetch(a.href);
+  const scheduleUrl = new URL(a.href);
+  const pageParams = new URLSearchParams(window.location.search);
+  if (pageParams.has('start')) scheduleUrl.searchParams.set('start', pageParams.get('start'));
+  if (pageParams.has('end')) scheduleUrl.searchParams.set('end', pageParams.get('end'));
+
+  const resp = await fetch(scheduleUrl.href);
   if (!resp.ok) {
     await removeSchedule(a);
     return;

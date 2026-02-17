@@ -1,0 +1,22 @@
+{
+  "variantName": "cards-featured",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-17T04:38:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avantorsciences.com/us/en/",
+    "originPage": "Avantor Sciences Featured content",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "featured-content",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + image + title + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  }
+}

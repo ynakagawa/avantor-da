@@ -15,6 +15,12 @@
           ]
         },
         {
+          "name": "cards-featured",
+          "instances": [
+            "app-cmscard-container"
+          ]
+        },
+        {
           "name": "cards-product",
           "instances": [
             "cx-page-slot.Section3 app-cmscard-container .Auto_Fit",

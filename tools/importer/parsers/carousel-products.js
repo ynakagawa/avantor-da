@@ -46,13 +46,19 @@ export default function parse(element, { document }) {
     // Column 2: Product text (name + catalog number)
     const contentCell = document.createElement('div');
 
-    // Extract product name
-    // Validated: Found as <a class="cx-link cursor-pointer"> in .text-container
+    // Extract product name (preserve link if present)
     const nameLink = item.querySelector('.text-container a.cx-link') ||
                      item.querySelector('.text-container a');
     if (nameLink) {
       const heading = document.createElement('strong');
-      heading.textContent = nameLink.textContent.trim();
+      if (nameLink.href) {
+        const a = document.createElement('a');
+        a.href = nameLink.href;
+        a.textContent = nameLink.textContent.trim();
+        heading.append(a);
+      } else {
+        heading.textContent = nameLink.textContent.trim();
+      }
       const p = document.createElement('p');
       p.append(heading);
       contentCell.append(p);

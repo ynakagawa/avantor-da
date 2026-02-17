@@ -1,3 +1,8 @@
+.cards-product {
+  margin: 16px auto;
+  max-width: 1400px;
+}
+
 .cards-product > ul {
   list-style: none;
   margin: 0;
@@ -7,9 +12,19 @@
   gap: 24px;
 }
 
+.cards-product.three-cards > ul {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-product.four-cards > ul {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .cards-product > ul > li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .cards-product .cards-product-card-body {

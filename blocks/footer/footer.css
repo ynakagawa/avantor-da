@@ -1,57 +1,109 @@
+/* Matches app-avtr-footer-navigation from www.avantorsciences.com */
 footer {
+  background-color: #fafafa;
+  padding: 64px 16px 48px;
+
   a {
     text-decoration: none;
+    color: #0064c8;
   }
 
   .footer-content {
-    max-width: var(--grid-container-width);
-    margin: 48px auto;
+    max-width: 1400px;
+    margin: 0 auto;
     font-size: 14px;
+    color: #53565a;
+  }
+
+  .footer-body-container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .footer-row {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-description {
+    flex: 1;
+
+    p {
+      margin: 0 0 1em;
+    }
+  }
+
+  .footer-nav-column nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 48px;
+  }
+
+  .footer-nav-group {
+    min-width: 140px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0 0 8px;
+    }
+
+    p {
+      margin: 0 0 8px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
   }
 
   .section-legal ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .section-legal li {
+    margin: 0;
   }
 
   .section-copyright p {
     margin: 0;
   }
 
-  .section {
-    .default-content {
-      max-width: initial;
-      margin: initial;
-    }
+  .section .default-content {
+    max-width: initial;
+    margin: initial;
   }
 }
 
 @media (width >= 900px) {
   footer {
-    margin: 0;
-
-    .section-legal {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
-      margin-bottom: 24px;
-
-      ul {
-        display: flex;
-        justify-content: end;
-        gap: var(--spacing-xl);
-      }
-
-      li {
-        margin: 0;
-      }
+    .footer-row {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
     }
 
-    .section-copyright {
-      display: flex;
-      justify-content: end;
-      gap: var(--spacing-xl);
+    .footer-description {
+      flex: 0 0 auto;
+      max-width: 500px;
+    }
+
+    .footer-nav-column {
+      flex: 0 0 auto;
     }
   }
 }

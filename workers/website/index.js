@@ -13,6 +13,20 @@
 import { fetchSchedule, fetchFromAem } from './handlers/aem.js';
 import fetchDaSc from './handlers/dasc.js';
 
+// Redirect /path/index to /path/ (AEM EDS serves index doc at trailing-slash URL)
+const getIndexRedirect = (request, url) => {
+  if (request.method !== 'GET' && request.method !== 'HEAD') return null;
+  const path = url.pathname;
+  if (!path.endsWith('/index')) return null;
+  const redirectTo = new URL(request.url);
+  redirectTo.pathname = path.slice(0, -6) || '/';
+  if (!redirectTo.pathname.endsWith('/')) redirectTo.pathname += '/';
+  return new Response(null, {
+    status: 301,
+    headers: { location: redirectTo.href },
+  });
+};
+
 const ROUTES = [
   // Handle schedule manifests
   {
@@ -110,6 +124,9 @@ export default {
 
     const portResp = getPortRedirect(req, url);
     if (portResp) return portResp;
+
+    const indexResp = getIndexRedirect(req, url);
+    if (indexResp) return indexResp;
 
     const rumResp = getRUMRequest(req, url);
     if (rumResp) return rumResp;

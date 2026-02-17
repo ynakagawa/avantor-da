@@ -12,4 +12,6 @@ export default function decorate(block) {
   });
   block.textContent = '';
   block.append(ul);
+  if (ul.children.length === 3) block.classList.add('three-cards');
+  if (ul.children.length === 4) block.classList.add('four-cards');
 }

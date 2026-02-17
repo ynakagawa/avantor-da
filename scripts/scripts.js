@@ -4,6 +4,7 @@ const hostnames = ['authorkit.dev'];
 
 const locales = {
   '': { lang: 'en' },
+  '/us/en': { lang: 'en' },
   '/de': { lang: 'de' },
   '/es': { lang: 'es' },
   '/fr': { lang: 'fr' },

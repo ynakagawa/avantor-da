@@ -1,0 +1,34 @@
+{
+  "variantName": "hero-promo",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-02-17T04:38:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avantorsciences.com/us/en/",
+    "originPage": "Avantor Sciences homepage",
+    "blockPosition": "promo"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "promo-hero",
+    "imagePattern": "fixed-width"
+  },
+  "contentPattern": {
+    "structure": "image + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional banners",
+      "promo cards with dark backgrounds",
+      "compact hero sections"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "light background hero sections",
+      "full-bleed hero with curved SVG"
+    ]
+  }
+}

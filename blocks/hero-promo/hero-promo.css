@@ -1,0 +1,122 @@
+.hero-promo {
+  max-width: 1400px;
+  margin: 16px auto;
+  background-color: #d7d7d7;
+  padding: 36px 104px;
+  color: var(--color-gray-900, #1b1b1b);
+}
+
+/* Two-column layout: image | copy */
+.hero-promo-row {
+  display: grid;
+  grid-template-columns: 271px 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+/* Column 1: Image */
+.hero-promo-cell--image {
+  width: 271px;
+  flex-shrink: 0;
+}
+
+.hero-promo-cell--image img {
+  width: 271px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Column 2: Copy */
+.hero-promo-cell--copy {
+  margin-left: 100px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.hero-promo-cell--copy .avtr-card-content {
+  max-width: 480px;
+}
+
+.hero-promo-cell--copy .avtr-card-title {
+  margin: 0 0 16px;
+  font-size: var(--heading-font-size-l, 2rem);
+  font-weight: 700;
+}
+
+.hero-promo-cell--copy .avtr-card-title div {
+  margin: 0;
+}
+
+.hero-promo-cell--copy .avtr-card-body p {
+  margin: 0 0 12px;
+}
+
+.hero-promo-cell--copy .avtr-card-body p:last-child {
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+/* Button styles */
+.hero-promo .av-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.hero-promo .av-btn--primary {
+  background-color: var(--color-brand, #0064c8);
+  color: #fff;
+}
+
+.hero-promo .av-btn:hover {
+  opacity: 0.9;
+}
+
+/* No-image variant: single column */
+.hero-promo.no-image .hero-promo-cell--image {
+  display: none;
+}
+
+.hero-promo.no-image .hero-promo-row {
+  grid-template-columns: 1fr;
+}
+
+.hero-promo.no-image .hero-promo-cell--copy {
+  margin-left: 0;
+}
+
+@media (width < 900px) {
+  .hero-promo {
+    padding: 24px 24px;
+  }
+
+  .hero-promo-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-promo-cell--image {
+    width: 100%;
+    max-width: 271px;
+    margin: 0 auto;
+  }
+
+  .hero-promo-cell--image img {
+    width: 100%;
+    max-width: 271px;
+  }
+
+  .hero-promo-cell--copy {
+    margin-left: 0;
+    order: 2;
+  }
+
+  .hero-promo-cell--image {
+    order: 1;
+  }
+}

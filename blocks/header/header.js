@@ -5,6 +5,7 @@ import { setColorScheme } from '../section-metadata/section-metadata.js';
 const { locale } = getConfig();
 
 const HEADER_PATH = '/fragments/nav/header';
+const LOGO_URL = 'https://main--avantor--ynakagawa.aem.live/media_18fad63d1b01230af6543ee52fd08f79f29c94602.svg';
 const HEADER_ACTIONS = [
   '/tools/widgets/scheme',
   '/tools/widgets/language',
@@ -140,6 +141,15 @@ function decorateNavItem(li) {
 function decorateBrandSection(section) {
   section.classList.add('brand-section');
   const brandLink = section.querySelector('a');
+  const logo = brandLink.querySelector('img, picture img');
+  if (logo) {
+    logo.src = LOGO_URL;
+  } else {
+    const img = document.createElement('img');
+    img.src = LOGO_URL;
+    img.alt = 'Avantor';
+    brandLink.prepend(img);
+  }
   const [, text] = brandLink.childNodes;
   const span = document.createElement('span');
   span.className = 'brand-text';

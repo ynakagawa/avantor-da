@@ -331,7 +331,11 @@ h6 {
 }
 
 h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
+h2 {
+  font-size: var(--heading-font-size-xl);
+  margin: 16px 0;
+  text-align: left;
+}
 h3 { font-size: var(--heading-font-size-l); }
 h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
@@ -366,7 +370,7 @@ svg {
 
 @media (width >= 1440px) {
   :root {
-    --grid-container-width: 1200px;
+    --grid-container-width: 1400px;
   }
 }
 

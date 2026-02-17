@@ -5,43 +5,146 @@
 
 .hero-product {
   position: relative;
+  overflow: hidden;
+}
+
+/* Three-cell row layout (copy | SVG curve | hero image) */
+.hero-product-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(180px, 240px) minmax(300px, 1.5fr);
+  min-height: 400px;
+  align-items: stretch;
+}
+
+/* Cell 1: Copy */
+.hero-product-cell--copy {
+  display: flex;
+  align-items: center;
   padding: 40px 24px;
-  min-height: 300px;
+  background-color: #001551;
+  color: #fff;
+  z-index: 1;
 }
 
-.hero-product h1,
-.hero-product h2,
-.hero-product h3,
-.hero-product h4,
-.hero-product h5,
-.hero-product h6,
-.hero-product p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+.hero-product-cell--copy .avtr-card-content {
+  max-width: 480px;
 }
 
-.hero-product.no-image * {
-  color: var(--text-color);
+.hero-product-cell--copy .avtr-card-title {
+  margin: 0 0 16px;
+  font-size: var(--heading-font-size-l, 2rem);
+  font-weight: 700;
 }
 
-.hero-product picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+.hero-product-cell--copy .avtr-card-title div {
+  margin: 0;
 }
 
-.hero-product img {
-  object-fit: cover;
+.hero-product-cell--copy .avtr-card-body p {
+  margin: 0 0 12px;
+}
+
+.hero-product-cell--copy .avtr-card-body p:last-child {
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+/* Cell 2: SVG curve */
+.hero-product-cell--svg {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.hero-product-cell--svg .hero-product-curve-svg {
   width: 100%;
   height: 100%;
+  min-height: 400px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Cell 3: Hero image */
+.hero-product-cell--image {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.hero-product-cell--image img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Button styles */
+.hero-product .av-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.hero-product .av-btn--primary.av-btn--on-dark {
+  background-color: var(--color-brand, #0064c8);
+  color: #fff;
+}
+
+.hero-product .av-btn:hover {
+  opacity: 0.9;
+}
+
+/* No-image variant: hide image cell, extend copy/svg */
+.hero-product.no-image .hero-product-cell--image {
+  display: none;
+}
+
+.hero-product.no-image .hero-product-row {
+  grid-template-columns: 1fr auto;
+}
+
+@media (width < 900px) {
+  .hero-product-row {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: unset;
+  }
+
+  .hero-product-cell--copy {
+    order: 1;
+    min-height: unset;
+  }
+
+  .hero-product-cell--svg {
+    order: 2;
+    min-height: 200px;
+    max-height: 300px;
+  }
+
+  .hero-product-cell--svg .hero-product-curve-svg {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .hero-product-cell--image {
+    order: 3;
+    min-height: 250px;
+  }
+
+  .hero-product-cell--image img {
+    min-height: 250px;
+  }
 }
 
 @media (width >= 900px) {
-  .hero-product {
-    padding: 40px 32px;
+  .hero-product-cell--copy {
+    padding: 48px 32px;
   }
 }

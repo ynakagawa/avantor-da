@@ -34,8 +34,8 @@
     ]
   },
   "usage": {
-    "pagesUsing": ["content/us/en/index"],
-    "reuseCount": 1,
-    "lastUsed": "2026-02-17T04:38:00.000Z"
+    "pagesUsing": ["content/us/en/index", "content/us/en/products"],
+    "reuseCount": 2,
+    "lastUsed": "2026-02-17T23:54:00.000Z"
   }
 }

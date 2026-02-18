@@ -41,6 +41,51 @@
           ]
         }
       ]
+    },
+    {
+      "name": "avantor-products",
+      "urls": [
+        "https://www.avantorsciences.com/us/en/products"
+      ],
+      "description": "Avantor Sciences products page with hero banner, category cards grid, feature section, related content cards, content carousel, and CTA banner",
+      "blocks": [
+        {
+          "name": "hero-product",
+          "instances": [
+            "cx-page-slot.Section1 .avtr-card.Hero_Card"
+          ]
+        },
+        {
+          "name": "cards-categories",
+          "instances": [
+            "cx-page-slot.Section3 app-cmscard-container .Categories"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "cx-page-slot.Section3 > app-card > .cms-card > app-simple-card-ui > .avtr-card.Feature_Card_Img_After"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            "cx-page-slot.Section3 app-cmscard-container .Two_Up"
+          ]
+        },
+        {
+          "name": "carousel-products",
+          "instances": [
+            "cx-page-slot.Section3 app-cms-content-carousel-container"
+          ]
+        },
+        {
+          "name": "hero-cta",
+          "instances": [
+            "cx-page-slot.Section4 .avtr-card.Content_Cta_Gradient"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-categories",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-17T23:54:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avantorsciences.com/us/en/products",
+    "originPage": "Avantor Sciences products page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "high",
+    "purpose": "category-navigation",
+    "imagePattern": "no-images"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph (no images)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product category listings",
+      "text-only card grids",
+      "navigation cards without images",
+      "feature/capability listings"
+    ],
+    "notSuitableFor": [
+      "cards with images",
+      "cards with CTAs",
+      "single-column card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/us/en/products"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-17T23:54:00.000Z"
+  }
+}

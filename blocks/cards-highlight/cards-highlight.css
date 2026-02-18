@@ -1,0 +1,161 @@
+/* Matches app-cmscard-container "Explore Digital Solutions by SmartScience" from www.avantorsciences.com/us/en/digital-solutions */
+.cards-highlight {
+  margin: 16px auto;
+  max-width: 1400px;
+  padding: 0 24px;
+}
+
+.cards-highlight .cards-highlight-title {
+  display: inline-block;
+  margin: 0 0 24px;
+  padding: 8px 16px;
+  font-size: var(--heading-font-size-l, 2rem);
+  font-weight: 700;
+  background-color: var(--color-orange-200, #ffc895);
+  color: var(--color-gray-900, #1b1b1b);
+}
+
+.cards-highlight > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Each card: image | content (2-col layout) */
+.cards-highlight-card {
+  display: grid;
+  grid-template-columns: 271px 1fr;
+  gap: 0;
+  align-items: center;
+  border: 1px solid #dadada;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cards-highlight-card-image {
+  width: 271px;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.cards-highlight-card-image img {
+  width: 271px;
+  height: auto;
+  aspect-ratio: 271 / 200;
+  object-fit: cover;
+  display: block;
+}
+
+.cards-highlight-card-content {
+  margin-left: 40px;
+  padding: 24px 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cards-highlight-card-content .avtr-card-title,
+.cards-highlight-card-content strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cards-highlight-card-content p {
+  margin: 0;
+}
+
+.cards-highlight-card-content .av-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.cards-highlight-card-content .av-btn--primary {
+  background-color: var(--color-brand, #0064c8);
+  color: #fff;
+}
+
+.cards-highlight-card-content .av-btn:hover {
+  opacity: 0.9;
+}
+
+/* Grid layout for multiple cards */
+@media (width >= 900px) {
+  .cards-highlight.two-cards > ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-highlight.three-cards > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-highlight.four-cards > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cards-highlight.two-cards .cards-highlight-card,
+  .cards-highlight.three-cards .cards-highlight-card,
+  .cards-highlight.four-cards .cards-highlight-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cards-highlight.two-cards .cards-highlight-card-image,
+  .cards-highlight.three-cards .cards-highlight-card-image,
+  .cards-highlight.four-cards .cards-highlight-card-image {
+    width: 100%;
+  }
+
+  .cards-highlight.two-cards .cards-highlight-card-image img,
+  .cards-highlight.three-cards .cards-highlight-card-image img,
+  .cards-highlight.four-cards .cards-highlight-card-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .cards-highlight.two-cards .cards-highlight-card-content,
+  .cards-highlight.three-cards .cards-highlight-card-content,
+  .cards-highlight.four-cards .cards-highlight-card-content {
+    margin-left: 0;
+    padding: 16px;
+  }
+}
+
+@media (width < 900px) {
+  .cards-highlight {
+    padding: 0 16px;
+  }
+
+  .cards-highlight-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cards-highlight-card-image {
+    width: 100%;
+    order: 1;
+  }
+
+  .cards-highlight-card-image img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .cards-highlight-card-content {
+    order: 2;
+    margin-left: 0;
+    padding: 16px;
+  }
+}

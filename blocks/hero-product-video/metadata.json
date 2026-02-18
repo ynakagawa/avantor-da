@@ -1,0 +1,33 @@
+{
+  "variantName": "hero-product-video",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-02-17T04:38:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avantorsciences.com/us/en/digital-solutions",
+    "originPage": "Avantor Digital Solutions",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "product-hero-video",
+    "mediaPattern": "video"
+  },
+  "contentPattern": {
+    "structure": "video/image + heading + paragraph + CTA",
+    "buttonCount": 1,
+    "videoCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "digital solutions hero",
+      "product hero with video background",
+      "YouTube/Vimeo hero embeds"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "hero with multiple CTAs"
+    ]
+  }
+}

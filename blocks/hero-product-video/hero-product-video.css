@@ -1,0 +1,174 @@
+/* Hero Product Video - modeled after app-simple-card-ui .avtr-card.Hero_Card_Video on digital-solutions */
+.hero-product-video-container .hero-product-video-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-product-video {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Three-cell row layout (copy | SVG curve | media) */
+.hero-product-video-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(180px, 240px) minmax(300px, 1.5fr);
+  min-height: 400px;
+  align-items: stretch;
+}
+
+/* Cell 1: Copy */
+.hero-product-video-cell--copy {
+  display: flex;
+  align-items: center;
+  padding: 40px 24px;
+  background-color: #fff;
+  color: #333;
+  z-index: 1;
+}
+
+.hero-product-video-cell--copy .avtr-card-content {
+  max-width: 480px;
+}
+
+.hero-product-video-cell--copy .avtr-card-title {
+  margin: 0 0 16px;
+  font-size: var(--heading-font-size-l, 2rem);
+  font-weight: 700;
+}
+
+.hero-product-video-cell--copy .avtr-card-title div {
+  margin: 0;
+}
+
+.hero-product-video-cell--copy .avtr-card-body p {
+  margin: 0 0 12px;
+}
+
+.hero-product-video-cell--copy .avtr-card-body p:last-child {
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+/* Cell 2: SVG curve - matches digital-solutions hero */
+.hero-product-video-cell--svg {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  min-width: 0;
+  background-color: rgb(48, 115, 186);
+}
+
+.hero-product-video-cell--svg .hero-product-video-curve-svg {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Cell 3: Video or image */
+.hero-product-video-cell--media {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-product-video-cell--media video {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-product-video-cell--media iframe.hero-product-video-embed {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.hero-product-video-cell--media img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Button styles */
+.hero-product-video .av-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.hero-product-video .av-btn--primary.av-btn--on-dark {
+  background-color: var(--color-brand, #0064c8);
+  color: #fff;
+}
+
+.hero-product-video .av-btn:hover {
+  opacity: 0.9;
+}
+
+/* No-media variant */
+.hero-product-video.no-media .hero-product-video-cell--media {
+  display: none;
+}
+
+.hero-product-video.no-media .hero-product-video-row {
+  grid-template-columns: 1fr auto;
+}
+
+@media (width < 900px) {
+  .hero-product-video-row {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    min-height: unset;
+  }
+
+  .hero-product-video-cell--copy {
+    order: 1;
+    min-height: unset;
+  }
+
+  .hero-product-video-cell--svg {
+    order: 2;
+    min-height: 200px;
+    max-height: 300px;
+  }
+
+  .hero-product-video-cell--svg .hero-product-video-curve-svg {
+    width: 100%;
+    min-height: 200px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .hero-product-video-cell--media {
+    order: 3;
+    min-height: 250px;
+  }
+
+  .hero-product-video-cell--media video,
+  .hero-product-video-cell--media img {
+    min-height: 250px;
+  }
+
+  .hero-product-video-cell--media iframe.hero-product-video-embed {
+    min-height: 250px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-product-video-cell--copy {
+    padding: 48px 32px;
+  }
+}

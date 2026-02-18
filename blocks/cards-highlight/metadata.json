@@ -1,0 +1,33 @@
+{
+  "variantName": "cards-highlight",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-17T04:38:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.avantorsciences.com/us/en/digital-solutions",
+    "originPage": "Avantor Digital Solutions - Explore Digital Solutions by SmartScience",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "highlight-cards",
+    "imagePattern": "fixed-width"
+  },
+  "contentPattern": {
+    "structure": "heading + (image | title + description + CTA) per card",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "digital solutions showcases",
+      "product/service highlight grids",
+      "image-left content-right card layouts"
+    ],
+    "notSuitableFor": [
+      "vertical-stack image-above cards",
+      "minimal text cards"
+    ]
+  }
+}

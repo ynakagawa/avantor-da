@@ -86,6 +86,27 @@
           ]
         }
       ]
+    },
+    {
+      "name": "avantor-digital-solutions",
+      "urls": [
+        "https://www.avantorsciences.com/us/en/digital-solutions"
+      ],
+      "description": "Avantor Digital Solutions page with video hero and Explore Digital Solutions highlight cards",
+      "blocks": [
+        {
+          "name": "hero-product-video",
+          "instances": [
+            "app-simple-card-ui .avtr-card.Hero_Card_Video"
+          ]
+        },
+        {
+          "name": "cards-highlight",
+          "instances": [
+            "app-cmscard-container"
+          ]
+        }
+      ]
     }
   ]
 }
